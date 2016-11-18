@@ -88,8 +88,7 @@ def delete_secret(path):
       response.raise_for_status()
     return True
   except Exception as e:
-<<<<<<< HEAD
-    log.error('Failed to write secret! {0}: {1}'.format(type(e).__name__, e))
+    log.error('Failed to delete secret! {0}: {1}'.format(type(e).__name__, e))
     raise salt.exceptions.CommandExecutionError(e)
 
 def list_secrets(path):
@@ -111,6 +110,6 @@ def list_secrets(path):
       response.raise_for_status()
     return response.json()['data']
   except Exception as e:
-    log.error('Failed to delete secret! {0}: {1}'.format(type(e).__name__, e))
+    log.error('Failed to list secrets! {0}: {1}'.format(type(e).__name__, e))
     raise salt.exceptions.CommandExecutionError(e)
 
